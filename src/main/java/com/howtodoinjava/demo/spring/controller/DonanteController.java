@@ -19,7 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
  */
 @Controller
 public class DonanteController {
-        @RequestMapping(value = "/donaciones", method = RequestMethod.GET)
+        @RequestMapping(value = "/crearDonante", method = RequestMethod.GET)
     public String donante(Locale locale, Model model) {
         
         
