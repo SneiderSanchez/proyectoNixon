@@ -74,7 +74,9 @@
                 </nav>
                 
               </header>
-    <form class="form">
+
+    
+    <form class="form" action="addDonante" method="post" modelAttribute="donante">
         <h2 class="tituloFormulario">Crear Donante</h2>
         <p class="contenedorInput" type="text" mensajito="Nombre:"><input class="inputFormulario" placeholder="Nombre del donante"></input></p>
         <p class="contenedorInput" type="email" mensajito="Email:"><input class="inputFormulario" placeholder="Email"></input></p>
