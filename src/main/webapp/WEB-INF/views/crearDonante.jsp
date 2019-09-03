@@ -135,9 +135,9 @@
         <a href="#" class="header__logo">Logo</a>
 
         <nav class="menu">
-            <a href="/ultimasDonaciones">Mis Donaciones</a>
-            <a href="/crearDonacion">Crear Donacion</a>
-            <a href="/">Cerrar sesion</a>
+            <a href="./ultimasDonaciones">Mis Donaciones</a>
+            <a href="./crearDonacion">Crear Donacion</a>
+            <a href="./">Cerrar sesion</a>
         </nav>
 
     </header>

@@ -121,13 +121,13 @@
     </div>
     <div class="main">
       <div class="navbar">
-        <a href="/dashboard" class="link">
-          <span>Home</span>
+        <a href="./addDonacion" class="link">
+          <span>Crear Donacion</span>
         </a>
-        <a href="/ultimasDonaciones" class="link">
+        <a href="./ultimasDonaciones" class="link">
           <span>Estado Donaciones</span>
         </a>
-        <a href="/" class="link">
+        <a href="./" class="link">
           <span>Cerrar Sesion</span>
         </a>
       </div>

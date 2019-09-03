@@ -552,15 +552,15 @@
                 <form class="form-signin" action="" method="post" name="form">
                     <label for="email">Correo Electronico</label>
                     <input class="form-styling" type="email" name="email" placeholder="" />
-                    <label for="password">Contraseï¿½a</label>
+                    <label for="password">Contraseña</label>
                     <input class="form-styling" type="text" name="password" placeholder="" />
                     <div class="btn-animate">
-                        <a href="/addDonacion" style="text-decoration: none;color: #ffffff"
-                            class="btn-signin">Entrar</a>
+                        <a href="./addDonacion" style="text-decoration: none;color: #ffffff"
+                            class="btn-signin">Entrar como donante</a>
                     </div>
                     <div class="btn-animate">
-                        <a href="/dashboardFundacion" style="text-decoration: none;color: #ffffff"
-                            class="btn-signin">Entrar</a>
+                        <a href="./dashboard" style="text-decoration: none;color: #ffffff"
+                            class="btn-signin">Entrar como fundacion</a>
                     </div>
                 </form>
 
@@ -570,7 +570,7 @@
                     <input class="form-styling" placeholder="Nombre" id="nombre" name="nombre"></input>
                     <label for="email">Email:</label>
                     <input class="form-styling" placeholder="Email" id="email" name="email"></input>
-                    <label for="email">ContraseÃ±a:</label>
+                    <label for="email">Contraseña:</label>
                     <input class="form-styling" placeholder="ContraseÃ±a" id="contraseÃ±a" name="contraseÃ±a"></input>
                     <label for="email">Nombre Contacto:</label>
                     <input class="form-styling" placeholder="Nombre del contacto" id="nombreContacto" name="nombreContacto"></input>
@@ -596,7 +596,7 @@
             </div>
 
             <div class="forgot">
-                <a href="#">Olvidaste tu contraseï¿½a?</a>
+                <a href="#">Olvidaste tu contraseña?</a>
             </div>
         </div>
 
