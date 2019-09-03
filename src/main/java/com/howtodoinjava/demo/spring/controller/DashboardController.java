@@ -24,4 +24,34 @@ public class DashboardController {
 
         return "dashboardFundacion";
     }
+    @RequestMapping(value = "/dashboard/alimentos", method = RequestMethod.GET)
+    public String DonacionAlimentos(Locale locale, Model model) {
+
+        return "donacionAlimentos";
+    }
+    @RequestMapping(value = "/dashboard/tecnologia", method = RequestMethod.GET)
+    public String DonacionTecnologia(Locale locale, Model model) {
+
+        return "donaciontecnologia";
+    }
+    @RequestMapping(value = "/dashboard/hogar", method = RequestMethod.GET)
+    public String DonacionHogar(Locale locale, Model model) {
+
+        return "donacionHogar";
+    @RequestMapping(value = "/dashboard/ropa", method = RequestMethod.GET)
+    public String DonacionRopa(Locale locale, Model model) {
+
+        return "donacionRopa";
+    @RequestMapping(value = "/dashboard/escolar", method = RequestMethod.GET)
+    public String DonacionEscolar(Locale locale, Model model) {
+
+        return "donacionEscolar";
+    @RequestMapping(value = "/dashboard/utiles", method = RequestMethod.GET)
+
+    public String DonacionUtiles(Locale locale, Model model) {
+        return "donacionUtiles";
+    }
+    public String DonacionAseo(Locale locale, Model model) {
+        return "donacionAseo";
+    }
 }
