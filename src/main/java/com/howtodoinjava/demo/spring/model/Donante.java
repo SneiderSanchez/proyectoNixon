@@ -1,5 +1,4 @@
 package com.howtodoinjava.demo.spring.model;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -45,17 +44,23 @@ public class Donante {
    @NotEmpty(message="Digite el telefono porfavor")
    private String telefono;
    
-   public String getTelefono() {
-      return telefono;
-   }
 
-   public void setTelefono(String telefono) {
-      this.telefono = telefono;
-   }
    @Column(name = "descripcion", unique = true)
    @Size(message = "{donante.descripcion.invalid}")
    @NotEmpty(message="Digite la descripcion porfavor")
    private String descripcion;
+   
+
+   @Column(name = "direccion", unique = true)
+   @Size(message = "{donante.direccion.invalid}")
+   @NotEmpty(message="Digite la direccion porfavor")
+   private String direccion;
+   
+
+   @Column(name = "ciudad", unique = true)
+   @Size(message = "{donante.ciudad.invalid}")
+   @NotEmpty(message="Digite la ciudad porfavor")
+   private String ciudad;
    
    public String getDescripcion() {
       return descripcion;
@@ -64,11 +69,6 @@ public class Donante {
    public void setDescripcion(String descripcion) {
       this.descripcion = descripcion;
    }
-   @Column(name = "direccion", unique = true)
-   @Size(message = "{donante.direccion.invalid}")
-   @NotEmpty(message="Digite la direccion porfavor")
-   private String direccion;
-   
    public String getDireccion() {
       return direccion;
    }
@@ -76,10 +76,13 @@ public class Donante {
    public void setDireccion(String direccion) {
       this.direccion = direccion;
    }
-   @Column(name = "ciudad", unique = true)
-   @Size(message = "{donante.ciudad.invalid}")
-   @NotEmpty(message="Digite la ciudad porfavor")
-   private String ciudad;
+   public String getTelefono() {
+      return telefono;
+   }
+
+   public void setTelefono(String telefono) {
+      this.telefono = telefono;
+   }
    
    public String getCiudad() {
       return ciudad;

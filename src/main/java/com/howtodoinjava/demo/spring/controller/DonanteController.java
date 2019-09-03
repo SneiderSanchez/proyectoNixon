@@ -44,16 +44,19 @@ public class DonanteController {
     public Donante formBackingObject() {
         return new Donante();
     }
-
-    @PostMapping("/addDonante")
-    public String saveUser(@ModelAttribute("donante") @Valid Donante donante, BindingResult result, Model model) {
-
+    
+    @RequestMapping(value = "/addDonante", method = RequestMethod.POST)
+    
+    public String saveDonante(@ModelAttribute("newdonante") @Valid Donante donante, BindingResult result, Model model) {
+        System.out.println("Se viene el result");       
+        System.out.println(result);
+               System.out.println("llegueueueueu");
             if (result.hasErrors()) {
                     model.addAttribute("donantes", donanteService.list());
                     return "crearDonante";
             }
 
             donanteService.save(donante);
-            return "redirect:/crearDonante";
+            return "redirect:/";
     }
 }

@@ -76,9 +76,10 @@
               </header>
 
     
-    <form class="form" action="addDonante" method="post" modelAttribute="donante">
+    <form id="newdonante" class="form" action="addDonante" method="post">
         <h2 class="tituloFormulario">Crear Donante</h2>
-        <p class="contenedorInput" type="text" mensajito="Nombre:"><input class="inputFormulario" placeholder="Nombre del donante"></input></p>
+        <%--<p class="contenedorInput" type="text" mensajito="Nombre:"><form:input cssClass="inputFormulario" ></input></p>--%>
+        <p class="contenedorInput" type="text" mensajito="Nombre:"><input class="inputFormulario" placeholder="Nombre" id="nombre" name="nombre"></input></p>
         <p class="contenedorInput" type="email" mensajito="Email:"><input class="inputFormulario" placeholder="Email"></input></p>
         <p class="contenedorInput" type="password" mensajito="Contraseña:"><input class="inputFormulario" placeholder="Contraseña"></input></p>
         <p class="contenedorInput" type="text" mensajito="Nombre Contacto:"><input class="inputFormulario" placeholder="Nombre del contacto"></input></p>
@@ -87,5 +88,16 @@
         <p class="contenedorInput" type="text" mensajito="Ciudad:"><input class="inputFormulario" placeholder="Ciudad"></input></p>
         <button class="botonCrear">Crear Donante</button>
     </form>
+    <form:form cssClass="form" modelAttribute="newDonante" action="/addDonante" method="post">
+   <form:input cssClass="inputFormulario" ></form:input>
+   <form:input path="email" />
+   <form:input path="direccion" />
+   <form:input path="nombreContacto" />
+   <form:input path="descripcion" />
+   <form:input path="ciudad" />
+   <form:input path="contraseña" />
+   <form:input path="telefono" />
+   <button type="submit">Add</button>
+</form:form>
 </body>
 </html>

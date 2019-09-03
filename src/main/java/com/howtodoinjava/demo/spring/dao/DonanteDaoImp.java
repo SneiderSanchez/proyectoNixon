@@ -22,10 +22,12 @@ import com.howtodoinjava.demo.spring.model.Donante;
 public class DonanteDaoImp implements DonanteDao{
    @Autowired
    private SessionFactory sessionFactory;
+   
   @Override
    public void save(Donante donante) {
       sessionFactory.getCurrentSession().save(donante);
    }
+  
   @Override
    public List<Donante> list() {
       @SuppressWarnings("unchecked")

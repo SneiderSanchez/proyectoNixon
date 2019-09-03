@@ -5,7 +5,7 @@
  */
 package com.howtodoinjava.demo.spring.service;
 
-import com.howtodoinjava.demo.spring.model.Donante;
+
 
 import java.util.List;
 
@@ -14,12 +14,11 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.howtodoinjava.demo.spring.dao.DonanteDao;
-/**
- *
- * @author pc
- */
+import com.howtodoinjava.demo.spring.model.Donante;
+
 @Service
 public class DonanteServiceImp implements DonanteService{
+    
    @Autowired
    private DonanteDao donanteDao;
 
