@@ -25,7 +25,7 @@ public class DonacionController {
         return "crearDonacion";
     }
     @RequestMapping(value = "/ultimasDonaciones", method = RequestMethod.GET)
-    public String Donacion(Locale locale, Model model) {
+    public String UltimasDonaciones(Locale locale, Model model) {
 
         return "ultimasDonaciones";
     }
