@@ -555,7 +555,11 @@
                     <label for="password">Contrase�a</label>
                     <input class="form-styling" type="text" name="password" placeholder="" />
                     <div class="btn-animate">
-                        <a href="./crearDonante" style="text-decoration: none;color: #ffffff"
+                        <a href="/addDonacion" style="text-decoration: none;color: #ffffff"
+                            class="btn-signin">Entrar</a>
+                    </div>
+                    <div class="btn-animate">
+                        <a href="/dashboardFundacion" style="text-decoration: none;color: #ffffff"
                             class="btn-signin">Entrar</a>
                     </div>
                 </form>
