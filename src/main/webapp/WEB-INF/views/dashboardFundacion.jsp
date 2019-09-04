@@ -87,25 +87,25 @@
         </div>
         <hr/>
         <div class="list-sidebar">
-          <a href="">
+          <a href="./dashboard/alimentos">
             <span>Alimentos</span>
           </a>
-          <a href="">
+          <a href="./dashboard/tecnologia">
             <span>Tecnologia</span>
           </a>
-          <a href="">
+          <a href="./dashboard/hogar">
               <span>Hogar</span>
           </a>
-          <a href="">
+          <a href="./dashboard/ropa">
             <span>Ropa</span>
           </a>
-          <a href="">
+          <a href="./dashboard/escolar">
             <span>Escolar</span>
           </a>
-          <a href="">
+          <a href="./dashboard/utiles">
             <span>Utiles</span>
           </a>
-          <a href="">
+          <a href="./dashboard/aseo">
             <span>Aseo</span>
           </a>
         </div>

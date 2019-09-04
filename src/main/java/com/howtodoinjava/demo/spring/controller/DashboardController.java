@@ -32,20 +32,23 @@ public class DashboardController {
     @RequestMapping(value = "/dashboard/tecnologia", method = RequestMethod.GET)
     public String DonacionTecnologia(Locale locale, Model model) {
 
-        return "donaciontecnologia";
+        return "donacionTecnologia";
     }
     @RequestMapping(value = "/dashboard/hogar", method = RequestMethod.GET)
     public String DonacionHogar(Locale locale, Model model) {
 
         return "donacionHogar";
+    }
     @RequestMapping(value = "/dashboard/ropa", method = RequestMethod.GET)
     public String DonacionRopa(Locale locale, Model model) {
 
         return "donacionRopa";
+    }
     @RequestMapping(value = "/dashboard/escolar", method = RequestMethod.GET)
     public String DonacionEscolar(Locale locale, Model model) {
 
         return "donacionEscolar";
+    }
     @RequestMapping(value = "/dashboard/utiles", method = RequestMethod.GET)
 
     public String DonacionUtiles(Locale locale, Model model) {
