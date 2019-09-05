@@ -571,7 +571,7 @@
                     <label for="email">Email:</label>
                     <input class="form-styling" placeholder="Email" id="email" name="email"></input>
                     <label for="email">Contraseña:</label>
-                    <input class="form-styling" placeholder="ContraseÃ±a" id="contraseÃ±a" name="contraseÃ±a"></input>
+                    <input class="form-styling" placeholder="contraseña" id="contraseña" name="contraseña"</input>
                     <label for="email">Nombre Contacto:</label>
                     <input class="form-styling" placeholder="Nombre del contacto" id="nombreContacto" name="nombreContacto"></input>
                     <label for="email">Descripcion:</label>
