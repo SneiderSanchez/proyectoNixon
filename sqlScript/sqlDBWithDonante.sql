@@ -27,7 +27,7 @@ CREATE TABLE IF NOT EXISTS `prueba1`.`donante` (
   `idDonante` INT(11) NOT NULL,
   `nombre` VARCHAR(45) NOT NULL,
   `email` VARCHAR(45) NOT NULL,
-  `contraseÃ±a` VARCHAR(45) NOT NULL,
+  `contraseña` VARCHAR(45) NOT NULL,
   `nombreContacto` VARCHAR(45) NOT NULL,
   `telefono` VARCHAR(45) NOT NULL,
   `descripcion` VARCHAR(255) NOT NULL,

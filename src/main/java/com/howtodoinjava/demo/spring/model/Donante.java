@@ -28,10 +28,10 @@ public class Donante {
    @NotEmpty(message="Digite el email porfavor")
    private String email;
    
-   @Column(name = "contraseÃ±a", unique = true)
-   @Size(message = "{donante.contraseÃ±a.invalid}")
-   @NotEmpty(message="Digite la contraseÃ±a porfavor")
-   private String contraseÃ±a;
+   @Column(name = "contraseña", unique = true)
+   @Size(message = "{donante.contraseña.invalid}")
+   @NotEmpty(message="Digite la contraseña porfavor")
+   private String contraseña;
    
    @Column(name = "nombreContacto", unique = true)
    @Size(message = "{donante.nombreContacto.invalid}")
@@ -99,12 +99,12 @@ public class Donante {
    public void setNombreContacto(String nombreContacto) {
       this.nombreContacto = nombreContacto;
    }
-   public String getContraseÃ±a() {
-      return contraseÃ±a;
+   public String getContraseña() {
+      return contraseña;
    }
 
-   public void setContraseÃ±a(String contraseÃ±a) {
-      this.contraseÃ±a = contraseÃ±a;
+   public void setContraseña(String contraseña) {
+      this.contraseña = contraseña;
    }
    public Long getId() {
       return id;
