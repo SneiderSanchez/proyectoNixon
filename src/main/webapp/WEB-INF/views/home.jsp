@@ -47,7 +47,7 @@
         }
 
         .frame-long {
-            height: 760px;
+            height: 850px;
         }
 
         .frame-short {
@@ -529,30 +529,53 @@
         }
 
         .registro {
-            margin-left: 10vh
+            margin-left: 5vh
         }
 
         .inicio {
             margin-left: 4vh
+        }
+        .alert {
+            padding: 20px;
+            background-color: #f44336;
+            color: white;
+        }
+
+        .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .closebtn:hover {
+            color: black;
         }
     </style>
 
 </head>
 
 <body>
+    <div id="alertForm">
+        
+    </div>
     <div class="container">
         <div class="frame">
             <div class="nav">
                 <ul class="links">
                     <li class="inicio signin-active"><a class="btn">Inicio</a></li>
-                    <li class="registro signup-inactive"><a class="btn">Registro </a></li>
+                    <li class="registro signup-inactive"><a class="btn">Registro Donante </a></li>
                 </ul>
             </div>
             <div ng-app ng-init="checked = false">
                 <form class="form-signin" action="" method="post" name="form">
                     <label for="email">Correo Electronico</label>
                     <input class="form-styling" type="email" name="email" placeholder="" />
-                    <label for="password">Contrase�a</label>
+                    <label for="password">Contraseña</label>
                     <input class="form-styling" type="text" name="password" placeholder="" />
                     <div class="btn-animate">
                         <a href="./addDonacion" style="text-decoration: none;color: #ffffff"
@@ -565,24 +588,26 @@
                 </form>
 
                 
-                <form class="form-signup" action="addDonante" method="post" name="form">
+                <div class="form-signup" >
                     <label for="email">Nombre:</label>
                     <input class="form-styling" placeholder="Nombre" id="nombre" name="nombre"></input>
                     <label for="email">Email:</label>
                     <input class="form-styling" placeholder="Email" id="email" name="email"></input>
-                    <label for="email">Contrase�a:</label>
-                    <input class="form-styling" placeholder="contrase�a" id="contrase�a" name="contrase�a"</input>
+                    <label for="email">Contraseña:</label>
+                    <input class="form-styling" placeholder="contraseña" id="contraseña" name="contraseña"</input>
                     <label for="email">Nombre Contacto:</label>
                     <input class="form-styling" placeholder="Nombre del contacto" id="nombreContacto" name="nombreContacto"></input>
+                    <label for="email">telefono:</label>
+                    <input class="form-styling" placeholder="Telefono del contacto" id="telefono" name="telefono"></input>
                     <label for="email">Descripcion:</label>
-                    <input class="form-styling" placeholder="Descripcion del producto" id="descripcion" name="descripcion"></input>
+                    <input class="form-styling" placeholder="Descripcion del donante" id="descripcion" name="descripcion"></input>
                     <label for="email">Direccion:</label>
                     <input class="form-styling" placeholder="Cra 1 No. 33-12" id="direccion" name="direccion"></input>
                     <label for="email">Ciudad:</label>
                     <input class="form-styling" placeholder="Ciudad" id="ciudad" name="ciudad"></input>
-                    <a ng-click="checked = !checked" class="btn-signup">Registrarse</a>
+                    <a ng-click="checked = !checked" class="btn-signup" onclick="formPost()">Registrarse</a>
                     <!-- <button class="btn-signin">Crear Donante</button> -->
-                </form>
+                </div>
 
                 <div class="success">
                     <img src="https://i.ibb.co/jTwjX9w/emoticon-square-smiling-face-with-closed-eyes.png" width="80"
@@ -596,7 +621,7 @@
             </div>
 
             <div class="forgot">
-                <a href="#">Olvidaste tu contrase�a?</a>
+                <a href="#">Olvidaste tu contraseña?</a>
             </div>
         </div>
 
@@ -605,6 +630,59 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script>
+        async function formPost() {
+            const divContenedor = document.getElementById('alertForm')
+            const nombre = document.getElementById('nombre').value
+            const email = document.getElementById('email').value
+            const contraseña = document.getElementById('contraseña').value
+            const telefono = document.getElementById('telefono').value
+            const nombreContacto = document.getElementById('nombreContacto').value
+            const direccion = document.getElementById('direccion').value
+            const ciudad = document.getElementById('ciudad').value
+            const descripcion = document.getElementById('descripcion').value
+            try {
+                const response = await fetch('http://localhost:3031/api/donante/add', {
+                    method: 'POST',
+                    headers: {
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(
+                        {
+                            "nombre": nombre,
+                            "email": email,
+                            "contraseña": contraseña,
+                            "nombreContacto": nombreContacto,
+                            "direccion": direccion,
+                            "ciudad": ciudad,
+                            "descripcion": descripcion,
+                            "telefono":telefono
+                        })
+                });
+                const data = await response.json()
+                console.log(data)
+                if (data.error) {
+                    divContenedor.innerHTML += `          
+                    <div class="alert">
+                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                        <strong>Error!</strong> No se pudo agregar el donante.
+                    </div>`
+                } else {
+                    divContenedor.innerHTML += `          
+                    <div class="alert" style="background-color: #4CAF50">
+                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                        <strong>Completado!</strong> Donante Agregado.
+                    </div>`
+                    divContenedor.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+                /*           var daString="<div id=\'block\' class=\'block\'><div class=\'block-2\'></div></div>";
+                          var daParent=document.getElementById("the ID of whatever your parent is goes in here");
+                          daParent.innerHTML=daString; */
+
+            } catch (error) {
+                console.log(error)
+            }
+        }
         $(function () {
             $(".btn").click(function () {
                 $(".form-signin").toggleClass("form-signin-left");
@@ -617,14 +695,7 @@
             });
         });
 
-        $(function () {
-            $(".btn-signup").click(function () {
-                $(".nav").toggleClass("nav-up");
-                $(".form-signup-left").toggleClass("form-signup-down");
-                $(".success").toggleClass("success-left");
-                $(".frame").toggleClass("frame-short");
-            });
-        });
+
 
         $(function () {
             $(".btn-signin").click(function () {

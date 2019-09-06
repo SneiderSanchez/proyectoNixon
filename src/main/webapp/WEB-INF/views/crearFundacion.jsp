@@ -34,7 +34,7 @@
 
         .form {
             width: 650px;
-            height: 740px;
+            height: 850px;
             background: #ffffff;
             border-radius: 8px;
             box-shadow: 0 0 40px -10px #7a7878;
@@ -126,6 +126,7 @@
         .menu a:hover {
             color: #c5cae9;
         }
+
         .content {
             padding: 25px 45px;
         }
@@ -186,6 +187,26 @@
             font-weight: bold;
             /* border-bottom: 1px solid #1F77D0; */
         }
+        .alert {
+            padding: 20px;
+            background-color: #f44336;
+            color: white;
+        }
+
+        .closebtn {
+            margin-left: 15px;
+            color: white;
+            font-weight: bold;
+            float: right;
+            font-size: 22px;
+            line-height: 20px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .closebtn:hover {
+            color: black;
+        }
     </style>
 
 </head>
@@ -236,48 +257,114 @@
                 </a>
             </div>
             <div class="content">
-                    <form id="newFundation" class="form" action="addFundation" method="post">
-                            <h2 class="tituloFormulario">Crear Fundacion</h2>
-                            <!-- <%--<p class="contenedorInput" type="text" mensajito="Nombre:"><form:input cssClass="inputFormulario" ></input></p>--%> -->
-                            <p class="contenedorInput" type="text" mensajito="Nombre:">
-                                <input class="inputFormulario" placeholder="Nombre" id="nombre" name="nombre"></input>
-                            </p>
-                            <p class="contenedorInput" type="email" mensajito="Email:">
-                                <input class="inputFormulario" placeholder="Email"></input>
-                            </p>
-                            <p class="contenedorInput" type="password" mensajito="contrase�a:">
-                                <input class="inputFormulario" placeholder="contrase�a"></input>
-                            </p>
-                            <p class="contenedorInput" type="text" mensajito="Nombre Contacto:">
-                                <input class="inputFormulario" placeholder="Nombre del contacto"></input>
-                            </p>
-                            <p class="contenedorInput" type="text" mensajito="Descripcion:">
-                                <input class="inputFormulario" placeholder="Descripcion del producto"></input>
-                            </p>
-                            <p class="contenedorInput" type="text" mensajito="Direccion:">
-                                <input class="inputFormulario" placeholder="Cra 1 No. 33-12"></input>
-                            </p>
-                            <p class="contenedorInput" type="text" mensajito="Ciudad:">
-                                <input class="inputFormulario" placeholder="Ciudad"></input>
-                            </p>
-                            <button class="botonCrear">Crear Donante</button>
-                        </form>
-                        <form:form cssClass="form" modelAttribute="newDonante" action="/addDonante" method="post">
-                            <form:input cssClass="inputFormulario"></form:input>
-                            <form:input path="email" />
-                            <form:input path="direccion" />
-                            <form:input path="nombreContacto" />
-                            <form:input path="descripcion" />
-                            <form:input path="ciudad" />
-                            <form:input path="contrase�a" />
-                            <form:input path="telefono" />
-                            <button type="submit">Add</button>
-                        </form:form>
+                    <div id="alertForm">
+        
+                        </div>
+                <div id="newFundation" class="form">
+                    <h2 class="tituloFormulario">Crear Fundacion</h2>
+                    <!-- <%--<p class="contenedorInput" type="text" mensajito="Nombre:"><form:input cssClass="inputFormulario" ></input></p>--%> -->
+                    <p class="contenedorInput" type="text" mensajito="Nombre:">
+                        <input class="inputFormulario" placeholder="Nombre" id="nombre" name="nombre"></input>
+                    </p>
+                    <p class="contenedorInput" type="email" mensajito="Email:">
+                        <input class="inputFormulario" placeholder="Email" name="email" id="email"></input>
+                    </p>
+                    <p class="contenedorInput" type="password" mensajito="contraseña:">
+                        <input class="inputFormulario" placeholder="contraseña" name="contraseña"
+                            id="contraseña"></input>
+                    </p>
+                    <p class="contenedorInput" type="text" mensajito="Nombre Contacto:">
+                        <input class="inputFormulario" placeholder="Nombre del contacto" name="nombreContacto"
+                            id="nombreContacto"></input>
+                    </p>
+                    <p class="contenedorInput" type="text" mensajito="Telefono Contacto:">
+                        <input class="inputFormulario" placeholder="Telefono del contacto" name="telefono"
+                            id="telefono"></input>
+                    </p>
+                    <p class="contenedorInput" type="text" mensajito="Descripcion:">
+                        <input class="inputFormulario" placeholder="Descripcion del producto" name="descripcion"
+                            id="descripcion"></input>
+                    </p>
+                    <p class="contenedorInput" type="text" mensajito="Direccion:">
+                        <input class="inputFormulario" placeholder="Cra 1 No. 33-12" name="direccion"
+                            id="direccion"></input>
+                    </p>
+                    <p class="contenedorInput" type="text" mensajito="Ciudad:">
+                        <input class="inputFormulario" placeholder="Ciudad" name="ciudad" id="ciudad"></input>
+                    </p>
+                    <button class="botonCrear" onclick="formPost()">Crear fundacion</button>
+                </div>
+<!--                 <form:form cssClass="form" modelAttribute="newDonante" action="/addDonante" method="post">
+                    <form:input cssClass="inputFormulario"></form:input>
+                    <form:input path="email" />
+                    <form:input path="direccion" />
+                    <form:input path="nombreContacto" />
+                    <form:input path="descripcion" />
+                    <form:input path="ciudad" />
+                    <form:input path="contraseña" />
+                    <form:input path="telefono" />
+                    <button type="submit">Add</button>
+                </form:form> -->
             </div>
         </div>
     </div>
 
 
 </body>
+<script>
+    async function formPost() {
+        const divContenedor = document.getElementById('alertForm')
+        const nombre = document.getElementById('nombre').value
+        const email = document.getElementById('email').value
+        const contraseña = document.getElementById('contraseña').value
+        const nombreContacto = document.getElementById('nombreContacto').value
+        const descripcion = document.getElementById('descripcion').value
+        const direccion = document.getElementById('direccion').value
+        const telefono = document.getElementById('telefono').value
+        const ciudad = document.getElementById('ciudad').value
+        try {
+            const response = await fetch('http://localhost:3031/api/fundacion/add', {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(
+                    {
+                        "nombre": nombre,
+                        "email": email,
+                        "contraseña": contraseña,
+                        "nombreContacto": nombreContacto,
+                        "direccion": direccion,
+                        "ciudad": ciudad,
+                        "descripcion": descripcion,
+                        "telefono": telefono
+                    })
+            });
+            const data = await response.json()
+            console.log(data)
+            if (data.error) {
+                divContenedor.innerHTML += `          
+                    <div class="alert">
+                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                        <strong>Error!</strong> No se pudo agregar la fundacion.
+                    </div>`
+            } else {
+                divContenedor.innerHTML += `          
+                    <div class="alert" style="background-color: #4CAF50">
+                        <span class="closebtn" onclick="this.parentElement.style.display='none';">&times;</span> 
+                        <strong>Completado!</strong> Fundacion Agregada.
+                    </div>`
+                divContenedor.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            /*           var daString="<div id=\'block\' class=\'block\'><div class=\'block-2\'></div></div>";
+                      var daParent=document.getElementById("the ID of whatever your parent is goes in here");
+                      daParent.innerHTML=daString; */
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
+</script>
 
 </html>
