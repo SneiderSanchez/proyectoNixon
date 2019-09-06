@@ -245,8 +245,8 @@
                             <p class="contenedorInput" type="email" mensajito="Email:">
                                 <input class="inputFormulario" placeholder="Email"></input>
                             </p>
-                            <p class="contenedorInput" type="password" mensajito="contraseña:">
-                                <input class="inputFormulario" placeholder="contraseña"></input>
+                            <p class="contenedorInput" type="password" mensajito="contraseï¿½a:">
+                                <input class="inputFormulario" placeholder="contraseï¿½a"></input>
                             </p>
                             <p class="contenedorInput" type="text" mensajito="Nombre Contacto:">
                                 <input class="inputFormulario" placeholder="Nombre del contacto"></input>
@@ -269,7 +269,7 @@
                             <form:input path="nombreContacto" />
                             <form:input path="descripcion" />
                             <form:input path="ciudad" />
-                            <form:input path="contraseña" />
+                            <form:input path="contraseï¿½a" />
                             <form:input path="telefono" />
                             <button type="submit">Add</button>
                         </form:form>
