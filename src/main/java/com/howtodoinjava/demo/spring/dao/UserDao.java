@@ -7,4 +7,5 @@ import com.howtodoinjava.demo.spring.model.User;
 public interface UserDao {
    void save(User user);
    List<User> list();
+   User findUserByUsername(String username);
 }
